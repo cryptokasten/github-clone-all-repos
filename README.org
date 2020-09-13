@@ -64,7 +64,7 @@ def get_all_repos_names(token, org):
 
 #+BEGIN_SRC python :tangle src/git_clone_all_repos.py
 def clone_or_pull(dst, org, name):
-    git = "git://github.com/%s/%s.git" % (org, name)
+    git = "git@github.com:%s/%s.git" % (org, name)
     sh = "cd %s ; git clone %s ; cd %s ; git pull" % (dst, git, name)
     os.system(sh)
 #+END_SRC
